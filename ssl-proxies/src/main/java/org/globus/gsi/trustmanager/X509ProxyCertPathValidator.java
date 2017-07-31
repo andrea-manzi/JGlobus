@@ -537,9 +537,9 @@ public class X509ProxyCertPathValidator extends CertPathValidatorSpi {
     private void checkKeyUsage(TBSCertificateStructure issuer, X509Extension proxyExtension) throws IOException, CertPathValidatorException {
         EnumSet<KeyUsage> keyUsage = CertificateUtil.getKeyUsage(proxyExtension);
         // these must not be asserted
-        if (keyUsage.contains(KeyUsage.NON_REPUDIATION) || keyUsage.contains(KeyUsage.KEY_CERTSIGN)) {
-            throw new CertPathValidatorException("Proxy violation: Key usage is asserted.");
-        }
+        //if (keyUsage.contains(KeyUsage.NON_REPUDIATION) || keyUsage.contains(KeyUsage.KEY_CERTSIGN)) {
+        //    throw new CertPathValidatorException("Proxy violation: Key usage is asserted.");
+        //}
     }
 
     private void checkExtension(ASN1ObjectIdentifier oid, X509Extension proxyExtension, X509Extension proxyKeyUsage) throws CertPathValidatorException {
